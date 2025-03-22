@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <audio id="audioPlayer">
+    <source src="lagu1.mp3" type="audio/mpeg">
+    <source src="lagu2.mp3" type="audio/mpeg">
+</audio>
+<script>
+  document.addEventListener('click', function() {
+    let audio = document.getElementById("audioPlayer");
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+</script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Happy Birthday Honey!</title>
+  <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
+  <link rel="stylesheet" href="styles/system-fonts.css" media="all">
+  <link rel="stylesheet" href="styles/style.css" media="all">
+  <style>
+    #birthdayMessage {
+      display: none;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: Poppins;
+      color: #ffa2e8;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      letter-spacing: 2px;
+      margin-left: 500px;
+      margin-right: 500px;
+    }
+    #birthdayImage {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      transition: opacity 2s ease-in-out;
+    }
+    #birthdayImage img {
+      width: 1000px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <canvas id="confetti"></canvas>
+  <div class="container" id="count">
+    <h1 id="head">Countdown to your birthday:</h1>
+    <ul>
+      <li><span id="day"></span>days</li>
+      <li><span id="hour"></span>hours</li>
+      <li><span id="minute"></span>minutes</li>
+      <li><span id="second"></span>seconds</li>
+    </ul>
+  </div>
+  <div id="merrywrap" class="merrywrap">
+    <canvas id="snowfall"></canvas>
+    <div class="giftbox" onclick="openGift()">
+      <div class="cover">
+        <div></div>
+      </div>
+      <div class="box"></div>
+    </div>    
+
+    <div id="birthdayMessage">
+      <h2>Happy Birthday Sayaaangg! <br>Sheila Marwa Pratiwi! 🎂</h2>
+      <div id="birthdayImage">
+        <img src="ultah.jpg" alt="Birthday Cake">
+      </div>
+      <p> <br>
+        Today, exactly 24 years ago.
+A beautiful baby was born from a loving mother and a strong father.
+They named the child Sheila Marwa Pratiwi.
+Her adventures have started a long time ago. Many stories, complaints, bitter, sweet and struggles that she has gone through.
+<br>
+<br>
+The author usually calls her "Seira" or more often with the special nickname "Sayang".
+<br>
+We met on a social media and exchanged stories.
+Although not so close at first, we were able to be close friends with each other until now we have become a romantic couple.
+<br>
+I am very grateful for your presence in my world, making me feel like this is how to enjoy life should be. But maybe on the other hand I often make you uncomfortable or make you tired every time I respond to me. Hehe, sorry for that. But enough here, this is not about me.
+<br>
+<br>
+Coinciding with your birthday, you have gone through many things. Whether it's something fun or problems that you often go through. But you managed to prove that you have grown and developed this far. I am proud of you.
+Whatever happens in the future. I'm here for you if you need me.
+Even if your environment is unfriendly and the people around you are annoying. I want you to read this message as a reminder that you are special and valuable. For that, "Happy Birthday Honey! Sheila Marwa Pratiwi =) "
+Sorry, I can't celebrate with you in person. Not yet,
+but I hope we can meet soon.
+<br>
+May you become smarter, more beautiful (already from, now more glowing >:3), your path is made easier, you become a pious child who is devoted to your parents and whatever you wish for can come true, and may good things always accompany you. Aamiin. 🎉🥳 🎁🎊🎶
+      <br>
+    </p>
+    </div>
+
+  </div>
+  
+  <script>
+    function openGift() {
+      document.querySelector('.giftbox').classList.add('step-2');
+      setTimeout(() => {
+        document.getElementById("birthdayMessage").style.display = "block";
+        document.getElementById("birthdayImage").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("birthdayMessage").style.opacity = "1";
+          document.getElementById("birthdayImage").style.opacity = "1";
+        }, 100);
+      }, 2000);
+    }
+  </script>
+  
+  <script src="scripts/confetti.min.js" charset="utf-8"></script>
+  <script src="scripts/index.js" charset="utf-8"></script>
+</body>
+</html>
